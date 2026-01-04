@@ -8,12 +8,12 @@ from PyQt5.QtWidgets import (
 from instr import *
 from second_window import *
 
-class Main_win(QWidget):
+class MainWin(QWidget):
 	def __init__ (self):
 		super().__init__()
 
 		self.initUI()
-		self.connect()
+		self.connects()
 		self.set_appear()
 
 		self.show()
@@ -25,9 +25,9 @@ class Main_win(QWidget):
 		self.instruction = QLabel(txt_instruction)
 		#Creamos un layout vertical
 		self.layout_line = QVBoxLayout()
-		self.layout_line.addwidget(self.hello_text,alignment = Qt.AlignLeft)
-		self.layout_line.addwidget(self.instruction,alignment = Qt.AlignLeft)
-		self.layout_line.addwidget(self.btn_next,alignment = Qt.AlignCenter)
+		self.layout_line.addWidget(self.hello_text,alignment = Qt.AlignLeft)
+		self.layout_line.addWidget(self.instruction,alignment = Qt.AlignLeft)
+		self.layout_line.addWidget(self.btn_next,alignment = Qt.AlignCenter)
 		self.setLayout(self.layout_line)
 	def next_click(self):
 		self.tw = TestWin()
@@ -41,5 +41,5 @@ class Main_win(QWidget):
 		self.move(win_x,win_y)
 
 app = QApplication([])
-mw = Main_win()
+mw = MainWin()
 app.exec_()
